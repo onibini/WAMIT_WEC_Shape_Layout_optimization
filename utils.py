@@ -42,7 +42,7 @@ def print_eval_message(elapsed):
     역할: 한 번의 성능 평가(목적함수 계산)가 완료되었을 때 소요 시간을 출력합니다.
     Input: elapsed (소요 시간, 초 단위)
     """
-    print(f"      ⏱️ Evaluation finished in {elapsed:.2f} seconds.")
+    print(f"    ⏱️ Evaluation finished in {elapsed:.2f} seconds.")
 
 def print_iter_start_message(func_name:str, location:str, Hs:float, Tp:float, h:float):
     """

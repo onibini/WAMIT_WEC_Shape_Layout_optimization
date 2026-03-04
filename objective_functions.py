@@ -11,14 +11,15 @@ def geometry_layout_func(vector, Hs:float, Tp:float, h:float, verbose:bool=False
     parser = WamitOutputParser()
     P_inc = parser.incident_power(Hs=Hs, Tp=Tp, gamma=1.4, h=h)
     total_power, individual_powers = parser.calc_power(Hs=Hs, Tp=Tp, gamma=1.4)
-    individual_CWR = individual_powers / (P_inc * 2 * vector[6])
-    CWR = np.average(individual_CWR)
-    return CWR, individual_CWR
+    # individual_CWR = individual_powers / (P_inc * 2 * vector[6])
+    # CWR = np.average(individual_CWR)
+    # return CWR, individual_CWR
+    return total_power, individual_powers
 
 if __name__ == "__main__":
     # vector = np.array([6.7, 27.8, 14.7, 27.7, 10.4, 0.0, 1.2, 5.0])
     vector = np.array([12.7, 30.0, 3.6, 30.0, 7.8, 0.0, 2.5, 4.8])
     # generate_cylinder_hemisphere_mesh(vector[6], vector[7], '.\\wamit_optimization\\wec.gdf', False)
-    total_CWR, individual_CWRs = geometry_layout_func(vector, Hs=1.07, Tp=5.46, h=50.0, verbose=False)
-    print(f"Calculated CWR: {total_CWR:.4f}")
-    print(f"Individual CWRs: {individual_CWRs}")
+    total_power, individual_powers = geometry_layout_func(vector, Hs=1.07, Tp=5.46, h=50.0, verbose=False)
+    print(f"Calculated total power: {total_power:.4f}")
+    print(f"Individual powers: {individual_powers}")

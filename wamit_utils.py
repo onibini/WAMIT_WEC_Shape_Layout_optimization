@@ -36,7 +36,7 @@ def remove_file():
     for file in remove_list:
         if os.path.exists(os.path.join(r'wamit_optimization', file)):
             os.remove(os.path.join(r'wamit_optimization', file))
-    print("      🗑️ Previous WAMIT output files removed.")
+    print("    🗑️ Previous WAMIT output files removed.")
 
 def run_wamit(verbose=False):
     remove_file()

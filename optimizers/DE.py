@@ -49,7 +49,7 @@ def DE(func, bounds, particle_size:int, loc_name:str, h:float, Hs:float, Tp:floa
         cnt_memory, iter_start = 0, time.time()
         for i in range(particle_size):
             print("-"*50)
-            print(f'      🔄 Updating Particle {i + 1}/{particle_size}')
+            print(f'    🔄 Updating Particle {i + 1}/{particle_size}')
             while True:
                 idxs = [idx for idx in range(particle_size) if idx != i]
                 a, b, c = pops[np.random.choice(idxs, 3, replace=False)]
